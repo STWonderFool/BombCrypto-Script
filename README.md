@@ -59,6 +59,7 @@
 лучшему моменту и отпустит кнопку мыши. **Можно оставить пустым и бот будет ориентироваться только на первый пункт**
 
 **Пример работы на моем пк с настройками: "max time captcha": "25", "mouse up if top difference more than": "0.005"**
+
 ![PC](https://user-images.githubusercontent.com/94215621/144736968-73c494c8-bb2c-4e7b-86c7-8dda9fe71736.gif)
 
 **Пример работы на сервере с настройками: "max time captcha": "25", "mouse up if top difference more than": ""**
