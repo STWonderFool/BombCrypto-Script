@@ -297,11 +297,16 @@ class Clicker(QThread):
                 pag.click(work_button[0] + randint(-15, 15), work_button[1] + randint(-10, 10))
                 sleep(1)
                 continue
+            if time() - start_time > 120:
+                pag.screenshot('ERROR IN HEROES.png')
+                return self.refresh_and_connect(), self.go_to_heroes(), self.clicks_to_work()
             sleep(2)
             work_button = pag.locateCenterOnScreen('targets/Work button.png', confidence=0.96)
             if work_button is None:
-                self.append_text.emit(f'{dt.now().strftime(self.current_time)} All Heroes is working!')
-                break
+                home_button = pag.locateCenterOnScreen('targets/Home button.png', confidence=0.95)
+                if home_button is not None:
+                    self.append_text.emit(f'{dt.now().strftime(self.current_time)} All Heroes is working!')
+                    break
 
     def scroll(self):
         self.append_text.emit(f'{dt.now().strftime(self.current_time)} Scrolling')
